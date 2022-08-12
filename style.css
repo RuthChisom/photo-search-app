@@ -1,0 +1,118 @@
+.app-container {
+    display: block;
+  }
+
+  .app-container::after {
+    clear: both;
+  }
+
+  .added-fig {
+    width: 250px;
+    margin: 5px;
+    display: inline-block;
+  }
+
+  .added-img {
+    width: 240px;
+    padding: 5px;
+    border: 1px solid black;
+    background-color: white;
+  }
+
+  .added-cap {
+    width: 240px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  #searchCriteria {
+    height: 28px;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 10px;
+  }
+
+  .app-fieldset {
+    min-width: 0;
+    padding: 0 10px 0 10px;
+    margin: 0;
+    border-bottom: 20px;
+    border: 1px solid #808080;
+  }
+
+  .app-legend {
+    display: block;
+    width: auto;
+    padding: 0 10px 0 10px;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: inherit;
+    color: #333;
+    border: 1px solid #808080;
+  }
+
+  .code-fieldset {
+    min-width: 0;
+    padding: 0 10px 0 10px;
+    margin: 0;
+    border-bottom: 20px;
+    border: 1px solid #808080;
+    background-color: white;
+  }
+
+  .code-legend {
+    display: block;
+    width: auto;
+    padding: 0 10px 0 10px;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: inherit;
+    color: #333;
+    border: 1px solid #808080;
+    background-color: white;
+  }
+
+  input[type=text], textarea {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    transition: all 0.30s ease-in-out;
+    outline: none;
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid #DDDDDD;
+  }
+
+  input[type=text]:focus, textarea:focus {
+    box-shadow: 0 0 5px rgb(0, 255, 33);
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid rgb(0, 255, 33);
+  }
+
+  input[type=text]:invalid {
+    box-shadow: 0 0 5px rgb(255, 0, 0);
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid rgb(255, 0, 0);
+  }
+
+  .code-pre {
+    overflow-y: hidden;
+    height: 110%;
+    background-color: transparent;
+  }
+
+  .syntaxhighlighter {
+    line-height: 140% !important;
+    font-size: 90% !important;
+  }
+
+  form {
+    margin-bottom: 20px;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }

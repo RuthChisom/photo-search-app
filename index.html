@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <title>Photo Search App</title>
     <script>document.write('<base href="' + document.location + '" />');</script>
-    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="style.css" />
     <script data-require="angular.js@1.4.8" data-semver="1.4.8" src="https://code.angularjs.org/1.4.8/angular.js"></script>
     <script data-require="angular-resource@1.4.8" data-semver="1.4.8" src="https://code.angularjs.org/1.4.8/angular-resource.js"></script>
     <script src="app.js"></script>
@@ -31,22 +31,31 @@
                      placeholder="Enter keywords (tags) separated by a comma."
                      required />
               <br />
-              <input type="button" class="btn btn-default" ng-click="resetForm(form);" value="Reset" />
               <button type="submit" class="btn btn-primary" ng-click="search(searchCriteria);document.getElementsByName('tags').focus();">
                 Search Flicker
               </button>
+              <input type="button" class="btn btn-default" ng-click="resetForm(form);" value="Reset" />
             </form>
           </fieldset>
     
         </div>
-        <div id="message"></div>
+        <!-- <div id="message"></div> -->
         <div ng-if="images" class="app-container">
           <h3 ng-show="images.items.length > 0">
             {{images.title}}
           </h3>
-          <figure class="added-fig" ng-repeat="image in images.items">
-            <img class="added-img" src="{{image.media.m}}" />
-            <figcaption class="added-cap">{{image.title}}</figcaption>
+          <figure class="added-fig" ng-repeat="image in images.items track by $index">
+            <!-- thumbnail image -->
+            <a ng-click="OpenImg(image)">
+              <img id="img{{$index}}" class="added-img" src="{{image.media.m}}" />
+            </a>
+            <!-- <figcaption class="added-cap">{{image.title}}</figcaption> -->
+            <!-- full image -->
+            <div id="myModal" class="modal">
+              <a ng-click="closeHeaderPopup()"><span class="close">&times;</span></a>
+              <img class="modal-content" id="modlImg">
+              <div id="caption"></div>
+            </div>
           </figure>
         </div>
     </section>

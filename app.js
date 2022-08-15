@@ -48,8 +48,6 @@ app.controller('FlickrCtrl', function($scope, $http) {
     var captionText = document.getElementById("caption");
       modal.style.display = "block";
       modalImg.src = image.media.m;
-      // construct details
-      // captionText.innerHTML = image.title+ " Published by "+ image.author + " On " + image.date_taken;
   } 
 
   //close image popup

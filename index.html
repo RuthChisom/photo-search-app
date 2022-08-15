@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Photo Search App</title>
-    <script>document.write('<base href="' + document.location + '" />');</script>
+    <!-- <script>document.write('<base href="' + document.location + '" />');</script> -->
     <link rel="stylesheet" href="style.css" />
     <script data-require="angular.js@1.4.8" data-semver="1.4.8" src="https://code.angularjs.org/1.4.8/angular.js"></script>
     <script data-require="angular-resource@1.4.8" data-semver="1.4.8" src="https://code.angularjs.org/1.4.8/angular-resource.js"></script>
@@ -39,7 +39,6 @@
           </fieldset>
     
         </div>
-        <!-- <div id="message"></div> -->
         <div ng-if="images" class="app-container">
           <h3 ng-show="images.items.length > 0">
             {{images.title}}
@@ -49,12 +48,14 @@
             <a ng-click="OpenImg(image)">
               <img id="img{{$index}}" class="added-img" src="{{image.media.m}}" />
             </a>
-            <!-- <figcaption class="added-cap">{{image.title}}</figcaption> -->
             <!-- full image -->
             <div id="myModal" class="modal">
               <a ng-click="closeHeaderPopup()"><span class="close">&times;</span></a>
               <img class="modal-content" id="modlImg">
-              <div id="caption"></div>
+              <div id="caption">
+                <h4>{{image.title}}</h4>
+                <b>Published by: </b>{{image.author}} <b>On </b>{{image.date_taken | date}}
+              </div>
             </div>
           </figure>
         </div>
